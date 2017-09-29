@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h1 SMTPor
+  p Dead simple SMTP Testing service
+  form.form(method="post", action="/")
+    if msg_type
+      div(class="alert alert-"+msg_type) #{msg_body}
+    fieldset.form-group
+      label(for="smtp_host") SMTP Host :
+      input.form-control(id="smtp_host", name="host", value=body.host)
+    fieldset.form-group
+      label(for="smtp_port") SMTP Port :
+      input.form-control(id="smtp_port", name="port", value=(body.port || 587))
+    fieldset.form-group
+      label(for="smtp_secure") Secured :
+      select.form-control(name="secured")
+        option(value="0") Plain
+        option(value="1") SSL
+        option(value="2") TLS
+    fieldset.form-group
+      label(for="username") Username :
+      input.form-control(id="username", name="username", value=body.username)
+    fieldset.form-group
+      label(for="password") Password :
+      input.form-control(type="password", id="password", name="password")
+    fieldset.form-group
+      label(for="from") From :
+      input.form-control(type="email", id="from", name="from", value=body.from)
+    fieldset.form-group
+      label(for="to") To :
+      input.form-control(id="to", name="to", value=body.to)
+    fieldset.form-group
+      label(for="subject") Subject :
+      input.form-control(type="text", id="subject", name="subject", value=body.subject)
+    fieldset.form-group
+      label(for="body") Email content :
+      textarea.form-control(id="body", name="body", placeholder="Hello world !") #{body.body}
+    div.form-actions
+      button.btn.btn-primary.btn-block Whossh !!!
