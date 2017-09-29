@@ -36,9 +36,9 @@ router.post('/', function(req, res, next) {
         res.render('index', { msg_type: 'success', msg_body: 'Whoosh !!! Check your inbox please ...', body: body });    
       }
     });
+  } else {
+    res.render('index', { msg_type: 'error', msg_body: 'Please fill in required fields !', body: body });  
   }
-
-  res.render('index', { msg_type: 'error', msg_body: 'Please fill in required fields !', body: body });
 });
 
 module.exports = router;
