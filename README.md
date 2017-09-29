@@ -2,7 +2,7 @@
 
 Never need a bigass mail client to test your SMTP config !
 
-![SMTPor](https://user-images.githubusercontent.com/4528223/31022834-3be38bda-a564-11e7-8236-f059775b453d.png)
+![SMTPor](https://user-images.githubusercontent.com/4528223/31022947-991302c2-a564-11e7-9ad6-13fddde7c46e.png)
 
 ## TL;DR
 
