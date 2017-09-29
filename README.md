@@ -19,6 +19,14 @@ $ npm install
 $ npm start
 ```
 
+## Heroku Deploying
+
+```bash
+$ heroku login
+$ heroku git:remote -a [your-app-name]
+$ git push heroku master
+```
+
 ## Contributors
 
 - @khanhicetea
