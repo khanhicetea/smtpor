@@ -36,3 +36,9 @@ $ git push heroku master
 ## License
 
 MIT License
+
+-----------------------------------
+
+**Ref:**
+
+- Cover photo from [MageeWP](https://www.mageewp.com/)
