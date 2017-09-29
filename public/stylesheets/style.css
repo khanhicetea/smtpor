@@ -1,8 +1,16 @@
 body {
   padding: 0 20px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 a {
   color: #00B7FF;
+}
+
+.form {
+	margin: 0 auto;
+}
+
+.form-group label {
+	text-align: right;
 }
