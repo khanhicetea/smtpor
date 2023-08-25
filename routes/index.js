@@ -2,11 +2,11 @@ const nodemailer = require('nodemailer');
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { body: {}, msg_type: '' });
 });
 
-router.post('/', function(req, res, next) {
+router.post('/', function (req, res, next) {
   const body = req.body;
 
   if (body.host && body.port) {
@@ -17,8 +17,8 @@ router.post('/', function(req, res, next) {
       secure: (secured == 1 ? true : false),
       requireTLS: (secured == 2 ? true : false),
       auth: {
-          user: body.username,
-          pass: body.password
+        user: body.username,
+        pass: body.password
       }
     });
 
@@ -31,13 +31,13 @@ router.post('/', function(req, res, next) {
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        res.render('index', { msg_type: 'error', msg_body: 'Please fill in required fields !', body: body });
+        res.render('index', { msg_type: 'error', msg_body: 'Error : ' + (error.response || ''), body: body });
       } else {
-        res.render('index', { msg_type: 'success', msg_body: 'Whoosh !!! Check your inbox please ...', body: body });    
+        res.render('index', { msg_type: 'success', msg_body: 'Whoosh !!! Check your inbox please ...', body: body });
       }
     });
   } else {
-    res.render('index', { msg_type: 'error', msg_body: 'Please fill in required fields !', body: body });  
+    res.render('index', { msg_type: 'error', msg_body: 'Please fill in required fields !', body: body });
   }
 });
 

@@ -15,15 +15,15 @@ block content
     fieldset.form-group
       label(for="smtp_secure") Secured :
       select.form-control(name="secured")
-        option(value="0") Plain
-        option(value="1") SSL
-        option(value="2") TLS
+        option(value="0", selected=(!body.secured)) Plain
+        option(value="1", selected=(body.secured=="1")) SSL
+        option(value="2", selected=(body.secured=="2")) TLS
     fieldset.form-group
       label(for="username") Username :
       input.form-control(id="username", name="username", value=body.username)
     fieldset.form-group
       label(for="password") Password :
-      input.form-control(type="password", id="password", name="password")
+      input.form-control(type="password", id="password", name="password", value=body.password)
     fieldset.form-group
       label(for="from") From :
       input.form-control(type="email", id="from", name="from", value=body.from)
